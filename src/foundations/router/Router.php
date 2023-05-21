@@ -10,10 +10,10 @@ class Router
         $this->routes = $routes;
     }
 
-    private function executeMiddlewares(array $middlewares): void
+    private function executeMiddlewares(array $middlewares, IKernel $diContainer): void
     {
         foreach ($middlewares as $middleware) {
-            $passes = (new $middleware)->canPass();
+            $passes = (new $middleware)->canPass($diContainer);
 
             if (!$passes) {
                 die;
@@ -43,12 +43,13 @@ class Router
             $controllerName = $routerResult[0];
             $actionName = $routerResult[1];
             $middlewares = $routerResult[2] ?? '';
+            $diContainer = new Kernel();
 
             if (is_array($middlewares)) {
-                $this->executeMiddlewares($middlewares);
+                $this->executeMiddlewares($middlewares, $diContainer);
             }
 
-            echo (new $controllerName)->$actionName();
+            echo (new $controllerName)->$actionName($diContainer);
         } else {
             echo $routerResult();
         }

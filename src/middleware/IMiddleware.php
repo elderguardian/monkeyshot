@@ -2,5 +2,5 @@
 
 interface IMiddleware
 {
-    public function canPass(): bool;
+    public function canPass(IKernel $kernel): bool;
 }
