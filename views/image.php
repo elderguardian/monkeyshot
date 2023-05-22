@@ -18,6 +18,7 @@
     <meta property="twitter:title" content="{{ $title }}">
     <meta property="twitter:description" content="{{ $description }}">
     <meta property="twitter:image" content="{{ $imageUrl }}">
+    <meta name="theme-color" content="{{ $color }}" />
     <link rel="stylesheet" href="/static/assets/image.css">
 </head>
 <body>
