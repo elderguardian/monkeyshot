@@ -1,0 +1,61 @@
+body {
+    background-color: #1d1d1f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+img {
+    color: gray;
+}
+
+h1 {
+    color: #e9e8e8;
+    font-family: 'Arial', serif;
+}
+
+i {
+    background: linear-gradient(-45deg,#6bc5f8,#cf59e6,#6bc5f8,#cf59e6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    -webkit-animation: gradient 10s ease infinite;
+    animation: gradient 10s ease infinite;
+    will-change: auto;
+    text-underline-offset: 4px;
+}
+
+img {
+    width: 80%;
+}
+
+@-webkit-keyframes gradient {
+    0% {
+        background-position:0 50%
+    }
+    50% {
+        background-position:100% 50%
+    }
+    to {
+        background-position:0 50%
+    }
+}
+@keyframes gradient {
+    0% {
+        background-position:0 50%
+    }
+    50% {
+        background-position:100% 50%
+    }
+    to {
+        background-position:0 50%
+    }
+}
