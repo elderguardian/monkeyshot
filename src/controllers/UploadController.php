@@ -68,7 +68,7 @@ class UploadController extends Controller
         }
 
         $serverName = $_SERVER['SERVER_NAME'];
-        $fileUrl = "https://$serverName/static/$randomFilename.$fileType";
+        $fileUrl = "https://$serverName/?i=$randomFilename.$fileType";
 
         $response->json([
             'url' => $fileUrl
