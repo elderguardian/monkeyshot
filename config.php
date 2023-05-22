@@ -5,4 +5,5 @@ return array(
     'upload_secret' => 'meow',
     'embed_title' => 'kagerou',
     'embed_description' => 'uploaded using kagerou',
+    'embed_color' => '#c662e8'
 );
