@@ -27,6 +27,7 @@ class ViewController extends Controller
         return $this->view('image', [
             'baseUrl' => $config['base_url'],
             'title' => $config['embed_title'],
+            'color' => $config['embed_color'],
             'description' => $config['embed_description'],
             'imageUrl' => "/static/$image",
             'fileName' => $image,
