@@ -15,7 +15,7 @@ class TokenMiddleware implements IMiddleware
         $request = $kernel->get('IRequest');
         $response = $kernel->get('IResponse');
 
-        $token = $request->fetch('token');
+        $token = $request->fetchOrNull('token');
 
         if ($token == null) {
             $response->json([

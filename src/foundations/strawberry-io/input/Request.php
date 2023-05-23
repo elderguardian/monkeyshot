@@ -33,10 +33,10 @@ class Request implements IRequest
     }
 
 
-    function fetch(string $paramName, $filter = null)
+    function fetchOrNull(string $paramName, $filter = null)
     {
         try {
-            return $this->fetchOrFail($paramName, $filter);
+            return $this->fetch($paramName, $filter);
         } catch (Exception $e) {
             return null;
         }
@@ -45,11 +45,11 @@ class Request implements IRequest
     /**
      * @throws Exception
      */
-    function fetchOrFail(string $paramName, $filter = null)
+    function fetch(string $paramName, $filter = null)
     {
 
         if (!array_key_exists($paramName, $this->data))
-            throw new Exception();
+            throw new Exception("Requested parameter has not been set.");
 
         $value = $this->data[$paramName];
 
