@@ -25,7 +25,7 @@ class ViewController extends Controller
     public function index(IKernel $kernel)
     {
         $request = $kernel->get('IRequest');
-        $image = $request->fetch('i');
+        $image = $request->fetchOrNull('i');
 
         if (!$image) {
             return $this->view('error', [
