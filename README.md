@@ -1,17 +1,37 @@
-# kagerou
-This is a screenshot upload server. There is a client available at [kagerou-client](https://github.com/elderguardian/kagerou-client).
 
-## Preview
-<img src="./preview.png" alt="Preview" width="60%">
+<div align="center">
+        <h1>kagerou</h1>
+        <i>A simple image upload server.</i>
+</div>
+<br>
+
+<p align="center">
+        
+</p>
+
+Kagerou allows you to upload images to your server using `POST requests`.
+The configuration file lets you configure the metatags sent when sharing the image.
+This makes your embed look fancy when shared on social media sites.
+There is a client allowing you to take and directly upload screenshots at [kagerou-client](https://github.com/elderguardian/kagerou-client).
+
+## Preview of images shared on Discord
+
+<img src="https://github.com/elderguardian/kagerou/assets/129489839/cc1715e5-3b88-4e24-b95f-3eab7aa36c8e" alt="Kagerou preview" height="300">
+<img src="https://github.com/elderguardian/kagerou/assets/129489839/88415698-2923-4ce1-82ba-92399a8ef1e8" alt="Kagerou preview 2" height="300">
 
 ## Deployment
-Clone the repository and move the files to your webservers folder.
 
-### Apache
-There is a .htaccess file in the repository. Make sure your apache configuration allows them and it should work.
+### Webserver
+Create a webserver with PHP support and `git clone` the repository into its root directory.
+Now redirect all requests except to `/static` to `index.html`.
 
-### Nginx
-This configuration should help you redirect everything to `index.php` except the `/static` folder.
+### Redirecting on Apache
+There is a `.htaccess` file in the repostiory.
+Make sure your apache configuration allows them and it should work without problems.
+
+### Redirecting on Nginx
+Redirecting on NGINX requires configuration in `/etc/nginx/sites-enabled/`.
+Here is an example configuration.
 
 ```
 server {
@@ -32,8 +52,23 @@ server {
                 include snippets/fastcgi-php.conf;
                 fastcgi_pass unix:/run/php/php8.1-fpm.sock;
         }
+}
+```
+
+
+### Docker
+There is an experimental docker image available at [elderguardian/kagerou](https://hub.docker.com/r/elderguardian/kagerou).
+To deploy using docker first create a `docker-compose.yml` containing the configuration below, create a `config.php` file and in the same directory paste in your configuration. Use the example `config.php` in the repository. There is also an image for arm to support the Raspberry PI.
+
+```
+services:
+  kagerou:
+    image: elderguardian/kagerou
+    ports:
+      - 3000:80
+    volumes:
+      - ./config.php:/var/www/html/config.php
 ```
 
 ## Configuration
-
-Edit the `config.php` file. You can use `$fileName` and `$fileSizeMb` inside the embed title and description.
+Edit the example `config.php` file inside the repository. You can use `$fileName` and `$fileSizeMb` inside the embed title and description. These variables will be replaced with the name or size of the file.
