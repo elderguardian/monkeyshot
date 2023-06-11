@@ -16,8 +16,8 @@ There is a client allowing you to take and directly upload screenshots at [kager
 
 ## Preview of images shared on Discord
 
-<img src="https://github.com/elderguardian/kagerou/assets/129489839/cc1715e5-3b88-4e24-b95f-3eab7aa36c8e" alt="Kagerou preview" height="300">
-<img src="https://github.com/elderguardian/kagerou/assets/129489839/88415698-2923-4ce1-82ba-92399a8ef1e8" alt="Kagerou preview 2" height="300">
+<img src="https://github.com/elderguardian/kagerou/assets/129489839/cc1715e5-3b88-4e24-b95f-3eab7aa36c8e" alt="Kagerou preview" height="200">
+<img src="https://github.com/elderguardian/kagerou/assets/129489839/88415698-2923-4ce1-82ba-92399a8ef1e8" alt="Kagerou preview 2" height="200">
 
 ## Deployment
 
