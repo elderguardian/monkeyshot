@@ -67,8 +67,10 @@ class UploadController extends Controller
             ], 500);
         }
 
-        $serverName = $_SERVER['SERVER_NAME'];
-        $fileUrl = "https://$serverName/?i=$randomFilename.$fileType";
+        $config = include('config.php');
+
+        $baseUrl = $config['base_url'];
+        $fileUrl = "$baseUrl/?i=$randomFilename.$fileType";
 
         $response->json([
             'url' => $fileUrl
