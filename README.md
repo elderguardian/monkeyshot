@@ -1,6 +1,6 @@
 
 <div align="center">
-        <h1>kagerou</h1>
+        <h1>monkeyshot</h1>
         <i>A simple image upload server.</i>
 </div>
 <br>
@@ -9,15 +9,15 @@
         
 </p>
 
-Kagerou allows you to upload images to your server using `POST requests`.
+Monkeyshot allows you to upload images to your server using `POST requests`.
 The configuration file lets you configure the metatags sent when sharing the image.
 This makes your embed look fancy when shared on social media sites.
-There is a client allowing you to take and directly upload screenshots at [kagerou-client](https://github.com/elderguardian/kagerou-client).
+There is a client allowing you to take and directly upload screenshots at [monkeyshot-client](https://github.com/elderguardian/monkeyshot-client).
 
 ## Preview of images shared on Discord
 
-<img src="https://github.com/elderguardian/kagerou/assets/129489839/cc1715e5-3b88-4e24-b95f-3eab7aa36c8e" alt="Kagerou preview" height="200">
-<img src="https://github.com/elderguardian/kagerou/assets/129489839/88415698-2923-4ce1-82ba-92399a8ef1e8" alt="Kagerou preview 2" height="200">
+<img src="https://github.com/elderguardian/monkeyshot/assets/129489839/cc1715e5-3b88-4e24-b95f-3eab7aa36c8e" alt="Monkeyshot preview" height="200">
+<img src="https://github.com/elderguardian/monkeyshot/assets/129489839/88415698-2923-4ce1-82ba-92399a8ef1e8" alt="Monkeyshot preview 2" height="200">
 
 ## Deployment
 
@@ -35,12 +35,12 @@ Here is an example configuration.
 
 ```
 server {
-        server_name kagerou.example.com;
-        root /path/to/kagerou ;
+        server_name ms.example.com;
+        root /path/to/ms ;
         index index.php;
 
         location /static/ {
-                root /var/www/kagerou/ ;
+                root /var/www/ms/ ;
                 try_files $uri $uri/ index.html ;
         }
 
