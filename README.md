@@ -55,20 +55,5 @@ server {
 }
 ```
 
-
-### Docker
-There is an experimental docker image available at [elderguardian/kagerou](https://hub.docker.com/r/elderguardian/kagerou).
-To deploy using docker first create a `docker-compose.yml` containing the configuration below, create a `config.php` file and in the same directory paste in your configuration. Use the example `config.php` in the repository. There is also an image for arm to support the Raspberry PI.
-
-```
-services:
-  kagerou:
-    image: elderguardian/kagerou
-    ports:
-      - 3000:80
-    volumes:
-      - ./config.php:/var/www/html/config.php
-```
-
 ## Configuration
 Edit the example `config.php` file inside the repository. You can use `$fileName` and `$fileSizeMb` inside the embed title and description. These variables will be replaced with the name or size of the file.
