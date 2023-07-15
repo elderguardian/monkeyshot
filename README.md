@@ -21,15 +21,31 @@ There is a client allowing you to take and directly upload screenshots at [monke
 
 ## Deployment
 
+### Docker
+
+Copy the `config.php` from the repository into a new directory and create a `docker-compose.yml`:
+
+```
+services:
+  monkeyshot:
+    image: ghcr.io/elderguardian/monkeyshot:latest
+    ports:
+      - 3000:80
+    volumes:
+      - ./config.php:/var/www/html/config.php
+```
+
+> **_NOTE:_** If you want to keep the images on a container restart, copy and volume the `static/` directory.
+
 ### Webserver
 Create a webserver with PHP support and `git clone` the repository into its root directory.
-Now redirect all requests except to `/static` to `index.html`.
+Now redirect all requests except `/static` to `index.html`.
 
-### Redirecting on Apache
+#### Redirecting on Apache
 There is a `.htaccess` file in the repostiory.
 Make sure your apache configuration allows them and it should work without problems.
 
-### Redirecting on Nginx
+#### Redirecting on Nginx
 Redirecting on NGINX requires configuration in `/etc/nginx/sites-enabled/`.
 Here is an example configuration.
 
