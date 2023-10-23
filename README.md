@@ -5,6 +5,8 @@ The configuration file lets you configure the metatags sent when sharing the ima
 This makes your embed look fancy when shared on social media sites.
 There is a client allowing you to take and directly upload screenshots at [monkeyshot-client](https://github.com/elderguardian/monkeyshot-client).
 
+Monkeyshot is based on the [Strawberry Framework](https://github.com/strberry).
+
 <img alt="Preview Image" width="300" src="https://github.com/elderguardian/monkeyshot/assets/129489839/32e3b31a-0641-449b-a289-37676716689d">
 
 ## Deployment
